@@ -6,9 +6,7 @@
     <!-- Page Content -->
     <div class="content">
 
-
-
-        
+        <h1>Dashbord</h1>
         
     </div>
     <!-- END Page Content -->
