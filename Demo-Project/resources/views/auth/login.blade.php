@@ -20,7 +20,7 @@
 
         <!-- Icons -->
         <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="{{('assets/media/favicons/favicon.png')}}">
+        <link rel="shortcut icon" href="{{asset('assets/media/favicons/favicon.png')}}">
         <link rel="icon" type="image/png" sizes="192x192" href="assets/media/favicons/favicon-192x192.png">
         <link rel="apple-touch-icon" sizes="180x180" href="assets/media/favicons/apple-touch-icon-180x180.png">
         <!-- END Icons -->
@@ -29,7 +29,7 @@
 
         <!-- Fonts and Codebase framework -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700">
-        <link rel="stylesheet" id="css-main" href="{{('assets/css/codebase.min.css')}}">
+        <link rel="stylesheet" id="css-main" href="{{asset('assets/css/codebase.min.css')}}">
 
         <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
         <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
@@ -105,19 +105,20 @@
                             <div class="col-sm-8 col-md-6 col-xl-4">
                                 <!-- jQuery Validation functionality is initialized with .js-validation-signin class in js/pages/op_auth_signin.min.js which was auto compiled from _es6/pages/op_auth_signin.js -->
                                 <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                                <form class="js-validation-signin" action="be_pages_auth_all.html" method="post">
+                                {{-- <form class="js-validation-signin" action="be_pages_auth_all.html" method="post"> --}}
+                                    {{ Form::open(['url'=>route('login'),'class'=>'js-validation-signin','method'=>'POST' ])}}
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <div class="form-material floating">
-                                                <input type="text" class="form-control" id="login-username" name="login-username">
-                                                <label for="login-username">Username</label>
+                                                <input type="text" class="form-control" id="signup-email" name="email">
+                                                <label for="login-username">Email</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-12">
                                             <div class="form-material floating">
-                                                <input type="password" class="form-control" id="login-password" name="login-password">
+                                                <input type="password" class="form-control" id="login-password" name="password">
                                                 <label for="login-password">Password</label>
                                             </div>
                                         </div>
@@ -129,7 +130,7 @@
                                             </button>
                                         </div>
                                         <div class="col-sm-6 mb-5">
-                                            <a class="btn btn-block btn-noborder btn-rounded btn-alt-secondary" href="op_auth_signup.html">
+                                            <a class="btn btn-block btn-noborder btn-rounded btn-alt-secondary" href="{{route('users.create')}}">
                                                 <i class="fa fa-plus text-muted mr-5"></i> New Account
                                             </a>
                                         </div>
@@ -139,7 +140,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </form>
+                                {{ Form::close() }}
                             </div>
                         </div>
                         <!-- END Sign In Form -->
@@ -177,12 +178,12 @@
             Custom functionality including Blocks/Layout API as well as other vital and optional helpers
             webpack is putting everything together at assets/_es6/main/app.js
         -->
-        <script src="{{('assets/js/codebase.app.min.js')}}"></script>
+        <script src="{{asset('assets/js/codebase.app.min.js')}}"></script>
 
         <!-- Page JS Plugins -->
-        <script src="{{('assets/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
+        <script src="{{asset('assets/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
 
         <!-- Page JS Code -->
-        <script src="{{('assets/js/pages/op_auth_signin.min.js')}}"></script>
+        <script src="{{asset('assets/js/pages/op_auth_signin.min.js')}}"></script>
     </body>
 </html>
