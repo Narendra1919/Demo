@@ -1,8 +1,10 @@
+</html>
+
 <!doctype html>
 <html lang="en" class="no-focus">
     <head>
          @include('blog.head')
-         @yield('css')
+         {{-- @yield('css') --}}
         <!-- END Stylesheets -->
     </head>
     <body>

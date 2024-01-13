@@ -1,15 +1,16 @@
 @extends('blog.base')
-@include('blog.base')
 @section('main')
-<main id="main-container">
 
     <!-- Page Content -->
-    <div class="content">
+    <main id="main-container">
 
-        <h1>Dashbord</h1>
-        
-    </div>
+        <!-- Page Content -->
+        <div class="content">
+               <h1>Dashboard</h1>
+        </div>
+        <!-- END Page Content -->
+
+    </main>
     <!-- END Page Content -->
-
-</main>
 @endsection
+
