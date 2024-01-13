@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BlogUpdateRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
@@ -37,6 +38,7 @@ class UserController extends Controller
         return redirect()->route('users.index');
       
     }
+    
 
     /**
      * Display the specified resource.
@@ -71,7 +73,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(BlogUpdateRequest $request, string $id)
     {
         //
     }

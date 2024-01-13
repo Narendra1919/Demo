@@ -23,3 +23,4 @@ Route::get('login', [UserController::class,'index'])->name('users.loginShow');
 Route::post('login', [UserController::class,'login'])->name('login');
 Route::get('dashbord', [UserController::class,'dashboardShow'])->name('blogs.dashboard')->middleware('auth');
 Route::resource('blogs',BlogController::class)->middleware('auth');
+Route::get('admin', [BlogController::class,'admin'])->middleware('auth')->name('blogs.admin');

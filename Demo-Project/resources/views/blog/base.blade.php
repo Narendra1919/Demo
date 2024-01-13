@@ -24,10 +24,10 @@
             <!-- Footer -->
         @include('blog.footer')
         <!-- END Page Container -->
-
+        @stack('script')
         @include('blog.corejs')
 
-        @stack('script')
+        
        
        
     </body>
